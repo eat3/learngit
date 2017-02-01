@@ -1,38 +1,39 @@
 /**
  * Created by Mr.liu on 2017/1/25.
  */
+
 class Person{
     String name;
     int age;
     Person(){
-        System.out.println("I haven't ......");
+        System.out.println("did you love me?");
     }
-    void Say(){
-        System.out.println("I love you");
-    }
-    Person(String name,int age){
-        this.name=name;
-        this.age = age;
+    void say(){
+        System.out.print("你的名字"+name+"你的年龄"+age);
     }
 }
-class Fei extends Person{
-    String like;
-    Fei(){
-        super();
-        System.out.println("你二大爷");
+class Lover extends Person{
+    private String who;
+    public String getWho(){
+        return who;
     }
-    Fei(String name,int age,String like){
-        super(name, age);
-        this.like = like;
-
+    public void setWho(String who){
+        this.who = who;
     }
-
+    Lover(){
+        System.out.println("yes!!!");
+    }
+    void say(){
+        super.say();
+        System.out.println("你喜欢过我吗"+getWho());
+    }
 }
-public class Study{
+class Study{
     public static void main(String args[]){
-        Fei Y = new Fei();
-        Fei I = new Fei("刘鹏飞",19,"爸爸");
-        System.out.println(I.name +I.age+I.like  );
-        I.Say();
+        Lover qiao = new Lover();
+        qiao.name = "乔娟";
+        qiao.age = 19;
+        qiao.setWho("当年");
+        qiao.say();
     }
 }
